@@ -1,6 +1,7 @@
 package org.amd.task04.client.weather;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.amd.task04.config.ApplicationConfig;
 import org.amd.task04.exception.ApiClientException;
 import org.amd.task04.client.weather.model.WeatherResponse;
 
@@ -17,9 +18,9 @@ import java.time.Duration;
  * Http client for sending requests through Open Weather Map API
  */
 public class OpenWeatherMapClient {
-    private static final String WEATHER_URL = "http://api.openweathermap.org/data/2.5/weather?id={cityId}&appid={key}&units=metric";
-    private static final String API_KEY = "b385aa7d4e568152288b3c9f5c2458a5";
-    private static final int timeoutSec = 10;
+    private static final String WEATHER_URL = ApplicationConfig.getStrProperty("client.weather.weather-url");
+    private static final String API_KEY = ApplicationConfig.getStrProperty("client.weather.api-key");
+    private static final int timeoutSec = ApplicationConfig.getIntProperty("client.weather.timeout-sec", 10);
 
     private static final ObjectMapper objectMapper = new ObjectMapper();
 

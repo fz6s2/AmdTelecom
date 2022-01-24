@@ -1,5 +1,6 @@
 package org.amd.task04.service.impl;
 
+import org.amd.task04.config.ApplicationConfig;
 import org.amd.task04.service.NotificationService;
 import org.amd.task04.service.TemperatureService;
 import org.amd.task04.service.WeatherCheckService;
@@ -14,9 +15,10 @@ import java.math.BigDecimal;
 public class WeatherCheckServiceImpl implements WeatherCheckService {
     private static final String TEMP_MORE_SAMPLE = "Your name and Temperature more than %dC. %dC";
     private static final String TEMP_LESS_SAMPLE = "Your name and Temperature less than %dC. %dC";
-    private static final BigDecimal TEMPERATURE_LIMIT = BigDecimal.valueOf(20);
-    private static final String SMS_NUMBER = "+306922222222";
-    private static final String SMS_SENDER = "AMD Telecom";
+    private static final BigDecimal TEMPERATURE_LIMIT = BigDecimal.valueOf(
+        ApplicationConfig.getIntProperty("service.weather.temperature-limit", 20));
+    private static final String SMS_NUMBER = ApplicationConfig.getStrProperty("service.weather.sms-number");
+    private static final String SMS_SENDER = ApplicationConfig.getStrProperty("service.weather.sms-from", "AMD Telecom");
 
     private static final Logger logger = LoggerFactory.getLogger(WeatherCheckServiceImpl.class);
 

@@ -56,13 +56,16 @@ public class ScheduledTask implements Runnable {
     @Override
     public void run() {
         if (times.get() == 0) {
-            stop();
             return;
         }
 
         new Thread(task).start();
 
         times.decrementAndGet();
+
+        if (times.get() == 0) {
+            stop();
+        }
     }
 
     /**

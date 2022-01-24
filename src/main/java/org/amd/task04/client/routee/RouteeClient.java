@@ -1,6 +1,7 @@
 package org.amd.task04.client.routee;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.amd.task04.config.ApplicationConfig;
 import org.amd.task04.exception.ApiClientException;
 import org.amd.task04.client.routee.model.SmsRequest;
 import org.amd.task04.client.routee.model.SmsResponse;
@@ -18,14 +19,13 @@ import java.util.Base64;
  * Http client for sending requests through Routee API
  */
 public class RouteeClient {
-    private static final String TOKEN_URL = "https://auth.routee.net/oauth/token";
-    private static final String SMS_URL = "https://connect.routee.net/sms";
-    private static final String APPLICATION_ID = "5c5d5e28e4b0bae5f4accfec";
-    private static final String APPLICATION_SECRET = "MGkNfqGud0";
+    private static final String TOKEN_URL = ApplicationConfig.getStrProperty("client.routee.token-url");
+    private static final String SMS_URL = ApplicationConfig.getStrProperty("client.routee.sms-url");
+    private static final String APPLICATION_ID = ApplicationConfig.getStrProperty("client.routee.application-id");
+    private static final String APPLICATION_SECRET = ApplicationConfig.getStrProperty("client.routee.application-secret");
     private static final String BASE64_TOKEN = "Basic " +
         new String(Base64.getEncoder().encode((APPLICATION_ID + ":" + APPLICATION_SECRET).getBytes()));
-
-    private static final int timeoutSec = 10;
+    private static final int timeoutSec = ApplicationConfig.getIntProperty("client.routee.timeout-sec", 10);
 
     private static final ObjectMapper objectMapper = new ObjectMapper();
 
