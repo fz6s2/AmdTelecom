@@ -30,6 +30,10 @@ public class WeatherCheckServiceImpl implements WeatherCheckService {
         this.temperatureService = temperatureService;
     }
 
+    /**
+     * Checks weather of the city and sends notification about it
+     * @param cityId City id
+     */
     @Override
     public void checkWeather(String cityId) {
         try {

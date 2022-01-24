@@ -21,6 +21,13 @@ public class SmsNotificationService implements NotificationService {
         this.routeeClient = routeeClient;
     }
 
+    /** Sends SMS notification
+     *
+     * @param from Sender
+     * @param to Recipient
+     * @param message Message
+     * @throws BusinessException Notification error
+     */
     @Override
     public void send(String from, String to, String message) throws BusinessException{
         try {

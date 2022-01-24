@@ -31,14 +31,14 @@ public class RouteeClient {
 
     /**
      * Sends SMS notification
-     * @param to Recipient
      * @param from Sender
+     * @param to Recipient
      * @param text Message
      * @param token Auth token
      * @return Response of sending confirmation
      * @throws ApiClientException API error
      */
-    public SmsResponse sendSms(String to, String from, String text, String token) throws ApiClientException {
+    public SmsResponse sendSms(String from, String to, String text, String token) throws ApiClientException {
         SmsRequest request = new SmsRequest(text, to, from);
 
         try {

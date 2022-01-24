@@ -22,6 +22,12 @@ public class TemperatureServiceImpl implements TemperatureService {
         this.weatherClient = weatherClient;
     }
 
+    /**
+     * Gets current temperature of the city
+     * @param cityId City Id
+     * @return Current temperature
+     * @throws BusinessException Temperature getting error
+     */
     @Override
     public BigDecimal getCurrentTemperature(String cityId) throws BusinessException {
         try {
