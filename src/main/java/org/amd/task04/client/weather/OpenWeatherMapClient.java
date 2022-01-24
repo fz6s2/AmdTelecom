@@ -19,6 +19,7 @@ import java.time.Duration;
  */
 public class OpenWeatherMapClient {
     private static final String WEATHER_URL = ApplicationConfig.getStrProperty("client.weather.weather-url");
+    // TODO To provide more security solution for credentials (env, java args, ..)
     private static final String API_KEY = ApplicationConfig.getStrProperty("client.weather.api-key");
     private static final int timeoutSec = ApplicationConfig.getIntProperty("client.weather.timeout-sec", 10);
 

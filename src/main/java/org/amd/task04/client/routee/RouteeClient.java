@@ -21,6 +21,7 @@ import java.util.Base64;
 public class RouteeClient {
     private static final String TOKEN_URL = ApplicationConfig.getStrProperty("client.routee.token-url");
     private static final String SMS_URL = ApplicationConfig.getStrProperty("client.routee.sms-url");
+    // TODO To provide more security solution for credentials (env, java args, ..)
     private static final String APPLICATION_ID = ApplicationConfig.getStrProperty("client.routee.application-id");
     private static final String APPLICATION_SECRET = ApplicationConfig.getStrProperty("client.routee.application-secret");
     private static final String BASE64_TOKEN = "Basic " +
