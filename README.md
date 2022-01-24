@@ -60,8 +60,8 @@ In order to send the SMS use the Routee API
 https://docs.routee.net/docs/
 
 ### General Guidelines:
-Use pure Java
-Use object-oriented programming
-Use SOLID design principles
-The code should be well documented.
-Use defensive programming approach.
+- Use pure Java
+- Use object-oriented programming
+- Use SOLID design principles
+- The code should be well documented.
+- Use defensive programming approach.
