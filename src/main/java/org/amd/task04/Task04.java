@@ -24,7 +24,7 @@ public class Task04 {
         // id for city = "Thessaloniki": if you use weather API by city name, you will find a list of 3 cities and must choose some
         String cityId = "734077";
 
-        final ScheduledTask task = new ScheduledTask(() -> weatherCheckService.checkWeather(cityId), 10, 60, TimeUnit.SECONDS);
+        final ScheduledTask task = new ScheduledTask(() -> weatherCheckService.checkWeather(cityId), 10, 10, TimeUnit.MINUTES);
         try {
             task.launch();
         } catch (Exception ex) {
