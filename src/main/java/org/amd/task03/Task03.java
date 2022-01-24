@@ -1,5 +1,8 @@
 package org.amd.task03;
 
+/**
+ * Task 03 - remaking words on string
+ */
 public class Task03 {
     private static final char [] VOWELS = {'a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'};
     private static final char [] WORD_DELIMITER = {' ', ',', '.', '!', '?', ';', '-', ':'};

@@ -12,6 +12,9 @@ import org.slf4j.LoggerFactory;
 
 import java.util.concurrent.TimeUnit;
 
+/**
+ * Task 04 - periodic weather check for Thessaloniki
+ */
 public class Task04 {
 
     private static final Logger logger = LoggerFactory.getLogger(Task04.class);

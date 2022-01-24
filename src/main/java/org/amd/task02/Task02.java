@@ -1,5 +1,8 @@
 package org.amd.task02;
 
+/**
+ * Task 02 - sum of digits on integer
+ */
 public class Task02 {
     /**
      * Accepts an integer and calculates the sum of its digits.
