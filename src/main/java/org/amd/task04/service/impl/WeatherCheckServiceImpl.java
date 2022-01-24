@@ -39,7 +39,7 @@ public class WeatherCheckServiceImpl implements WeatherCheckService {
         try {
             BigDecimal currentTemperature = temperatureService.getCurrentTemperature(cityId);
             String message = getMessage(currentTemperature);
-            notificationService.send(SMS_NUMBER, SMS_SENDER, message);
+            notificationService.send(SMS_SENDER, SMS_NUMBER, message);
         } catch (Exception e) {
             logger.error("Error checking weather", e);
         }
